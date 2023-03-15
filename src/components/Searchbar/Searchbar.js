@@ -2,7 +2,7 @@ import { Formik } from 'formik';
 import PropTypes from 'prop-types';
 import { BtnLabel, FormBtn, Header } from './Searchbar.styled';
 import { Form, Field } from './Searchbar.styled';
-
+import { BiSearch } from 'react-icons/bi';
 let initialValues = { value: '' };
 
 export const Searchbar = ({ onSubmit }) => {
@@ -15,7 +15,9 @@ export const Searchbar = ({ onSubmit }) => {
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         <Form>
           <FormBtn type="submit">
-            <BtnLabel>Search</BtnLabel>
+            <BtnLabel>
+              <BiSearch size="35" />
+            </BtnLabel>
           </FormBtn>
           <Field
             name="value"
