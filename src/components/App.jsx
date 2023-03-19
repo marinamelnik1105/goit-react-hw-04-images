@@ -17,7 +17,7 @@ export const App = () =>
   const [isLoad, setIsLoad] = useState(false);
   const [empty, setEmpty] = useState(false);
   const [loader, setLoader] = useState(false);
-const [reqId, setReqId] = useState(null);
+ const [reqId, setReqId] = useState(null);
 
   useEffect(() =>{
     const getImages = async (query, page) =>
@@ -41,14 +41,16 @@ const [reqId, setReqId] = useState(null);
         setLoader(false);
       }
     }
-      getImages(search, page);
-    }, [search, page,reqId]);
+    getImages(search, page);
+    
+    }, [search, page,reqId ]);
   
-  const showMoreImg = () => setPage(prev => (prev.page + 1));
+  const showMoreImg = () => setPage(prev => (prev + 1));
   
 
     const handleSubmit = ({ value }) =>
-    {setReqId(nanoid())
+    {
+       setReqId(nanoid())
       setSearch(value);
       setPage(1);
       seteError(null);
